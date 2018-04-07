@@ -6,6 +6,6 @@ Dice Roller User Story:
 
 3) Each dice that was rolled will display the result then add them up in a total sum.
 
-4) A log will be kept with timestamps for each dice roll & result. 
+4) A log will be kept with timestamps for each dice roll & result.
 
-5) A new log will be created each time the program will run.
+5) A new log directory will be created each time the program will run.
