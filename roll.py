@@ -1,4 +1,5 @@
 import random
+import os
 from dice import Die
 
 def dice_roller(dice_input_string):
@@ -36,14 +37,40 @@ def dice_roller(dice_input_string):
     output += " = {}".format(sum(dice_results))
     return output
 
+def clear_screen():
+    os.system("cls" if os.name == "nt" else "clear")
 
-print('Type "q" to quit')
+roll_input = ''
 
-# Menu loop
+def show_results():
+    """
+    Keeps menu open for instructions
+    """
+    clear_screen()
+
+    print("""
+    ############
+    Dice Roller!
+    ############
+
+    Type 'done' to Quit
+
+    ----------------------------------------
+    Roll dice by typing roll combos: ex:'2d6'
+    ----------------------------------------
+    """)
+    if roll_input:
+        print(dice_roller(roll_input))
+
+show_results()
+
+# Input loop
 while True:
     # input from User
-    roll_input = input('Type the dice you want to roll (ex: 2d8): ')
-    if roll_input == 'q':
+    print('')
+    roll_input = input('Roll Dice!: ').lower()
+    if roll_input == 'done':
         break
     else:
-        print(dice_roller(roll_input))
+        show_results()
+
