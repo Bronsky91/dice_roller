@@ -9,3 +9,5 @@ Dice Roller User Story:
 4) A log will be kept with timestamps for each dice roll & result.
 
 5) A new log directory will be created each time the program will run.
+
+6) Ability to add and subtract to dice rolls
