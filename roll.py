@@ -1,7 +1,7 @@
-import random
 import os
 import re
 import operator
+import datetime
 
 from dice import Die
 
@@ -97,6 +97,11 @@ def show_results():
     """)
     if roll_input:
         print(dice_roller(roll_input))
+        # Creates/Open dice log using today's date
+        dice_log = open('dice_logs/dice_log_{}.txt'.format(str(datetime.datetime.now().date())),'a')
+        # Logs the dice rolled
+        dice_log.write("{} rolled with the {} at {}.\n".format(roll_input,dice_roller(roll_input),datetime.datetime.now().strftime('%I:%M:%S %p')))
+        dice_log.close()
 
 show_results()
 
